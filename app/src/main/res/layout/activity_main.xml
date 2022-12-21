@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dp_20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dp_20" />
+
+    <EditText
+        android:id="@+id/search_edit_txt"
+        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:background="@drawable/rounded_text_field"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:ellipsize="end"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="@dimen/dp_10"
+        android:scrollHorizontally="true"
+        app:layout_constraintEnd_toEndOf="@id/right_padding"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/left_padding"
+        app:layout_constraintTop_toTopOf="@+id/top" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:layout_constraintBottom_toBottomOf="@+id/search_edit_txt"
+        app:layout_constraintStart_toStartOf="@+id/left_padding"
+        app:layout_constraintTop_toTopOf="@+id/search_edit_txt"
+        app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
+
+    <ImageView
+        android:id="@+id/add_btn"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        app:layout_constraintBottom_toBottomOf="@+id/search_edit_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/search_edit_txt"
+        app:layout_constraintTop_toTopOf="@+id/search_edit_txt"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tabInlineLabel="true"
+        app:layout_constraintStart_toStartOf="@+id/left_padding"
+        app:layout_constraintTop_toBottomOf="@+id/search_edit_txt"
+        app:tabIndicatorHeight="@dimen/dp_0"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/tabs"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_30"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+      >
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <Button
+        android:id="@+id/btn_invite"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_65"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:elevation="@dimen/dp_0"
+        android:stateListAnimator="@null"
+        android:text="invite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_65"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:elevation="@dimen/dp_0"
+        android:stateListAnimator="@null"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_invite" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_27"
+
+        android:elevation="@dimen/dp_0"
+        app:cardBackgroundColor="@color/teal_200"
+        app:cardCornerRadius="@dimen/dp_100"
+        app:cardElevation="@dimen/dp_0"
+        app:cardMaxElevation="@dimen/dp_0"
+        app:layout_constraintBottom_toTopOf="@+id/btn_invite"
+        app:layout_constraintEnd_toEndOf="@+id/btn_invite"
+        app:layout_constraintStart_toEndOf="@+id/btn_invite"
+        app:layout_constraintTop_toTopOf="@+id/btn_invite">
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/white_cirlce"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:elevation="@dimen/dp_0"
+        app:cardCornerRadius="@dimen/dp_100"
+        app:cardElevation="@dimen/dp_0"
+        app:cardMaxElevation="@dimen/dp_0"
+        app:layout_constraintBottom_toTopOf="@+id/btn_invite"
+        app:layout_constraintEnd_toEndOf="@+id/btn_invite"
+        app:layout_constraintStart_toEndOf="@+id/btn_invite"
+        app:layout_constraintTop_toTopOf="@+id/btn_invite"
+      >
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/white_cirlce"
+        app:layout_constraintStart_toStartOf="@+id/white_cirlce"
+        app:layout_constraintTop_toTopOf="@+id/white_cirlce" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

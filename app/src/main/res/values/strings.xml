@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UI_Screens</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tIndividuals">Individuals</string>
+    <string name="tGroups">Groups</string>
+    <string name="tSecret">Secret</string>
+    <string name="tPrivate">Private</string>
+    <string name="tHosting">Hosting</string>
+</resources>
